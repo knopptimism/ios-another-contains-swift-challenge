@@ -1,12 +1,15 @@
-import Foundation
+import UIKit
 
-extension String {
-    
+var str = "Hello, playground"
+
+extension String  {
+    func anotherContains(_ string: String) -> Bool {
+        
+        // options: .caseInsensitive compares without need of the case being the same. 
+        guard let _ = self.range(of: string, options: .caseInsensitive) else {
+            return false
+        }
+        return true
+        
+    }
 }
-
-
-// test cases
-print("Where is WaLdO".anotherContains("WALDO")) // true
-print("Where is WaLdO".anotherContains("where")) // true
-print("Where is WaLdO".anotherContains("is wA")) // true
-print("Where is WaLdO".anotherContains("nOPe"))  // false
